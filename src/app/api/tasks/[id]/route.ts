@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
-import { authenticate } from "@/lib/auth";
 
 const prisma = new PrismaClient();
 
@@ -24,9 +23,6 @@ export async function PUT(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  const authResult = await authenticate(req);
-  if (authResult instanceof NextResponse) return authResult;
-
   try {
     const { id } = idSchema.parse({ id: params.id });
     const body = await req.json();
@@ -54,9 +50,6 @@ export async function DELETE(
   req: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  const authResult = await authenticate(req);
-  if (authResult instanceof NextResponse) return authResult;
-
   try {
     const { id } = idSchema.parse({ id: params.id });
 
