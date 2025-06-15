@@ -1,0 +1,13 @@
+{
+    "ignores": [
+        "next",
+        "typescript",
+        "@prisma/client",
+        "eslint",
+        "tsx",
+        "@types/*",
+        "tailwindcss",
+        "eslint-config-next",
+        "@tailwindcss/postcss"
+    ]
+}
