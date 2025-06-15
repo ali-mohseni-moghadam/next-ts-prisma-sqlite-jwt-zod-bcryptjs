@@ -34,10 +34,9 @@ export default function TaskList({ tasks }: { tasks: Task[] }) {
             </span>
           </div>
           <div className="mt-2 text-xs text-gray-500">
-            <p>ایجاد: {new Date(task.createdAt).toLocaleDateString("fa-IR")}</p>
+            <p>ایجاد: {new Date(task.createdAt).toLocaleString("fa-IR")}</p>
             <p>
-              آخرین تغییر:{" "}
-              {new Date(task.updatedAt).toLocaleDateString("fa-IR")}
+              آخرین تغییر: {new Date(task.updatedAt).toLocaleString("fa-IR")}
             </p>
           </div>
         </li>
